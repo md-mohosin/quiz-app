@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./src/style.css">
+</head>
+
+<body>
+
+  <section class="container">
+    <div class="quize-container">
+      <div class="home" id="home-page">
+        <h1 class="home-title">Quiz App</h1>
+        <img src="./src/images/question.png" alt="">
+        <button id="start-btn">Let's Start</button>
+      </div>
+      <div id="quiz-page">
+        <div class="questions-content">
+          <div class="questions">
+            <img class="quiz-emoji" src="./src/images/emoji.png" alt="">
+            <h1 id="question"></h1>
+            <div class="option-container" id="options">
+
+            </div>
+            <button id="next-btn">Next
+              <img src="./src/images/next.png" alt="">
+            </button>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="score" id="score-page">
+        <div class="score-container" style="display: flex;flex-direction: column;gap: 50px;">
+          <img style="width: 400px;" src="./src/images/trophy.png" alt="">
+            <h1 style="color: white; font-size: 60px;">Your score <span id="score-count"></span></h1>
+        </div>
+      </div>
+  </section>
+  <script src="./src/quiz.js"></script>
+</body>
+
+</html>
