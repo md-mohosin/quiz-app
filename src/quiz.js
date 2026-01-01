@@ -58,9 +58,11 @@ let score = 0;
 
 const nextBtn = document.getElementById("next-btn")
 function showQuestion() {
+  document.getElementById("question-count").innerText=currentIndex + 1
   nextBtn.disabled = true;
   if (nextBtn.disabled === true) {
     nextBtn.style.cursor = 'not-allowed'
+    nextBtn.style.backgroundColor='gray'
   }
   const currentQuestion = questions[currentIndex]
 
@@ -109,6 +111,7 @@ function checkAnswer(selectIndex, btn) {
 
   nextBtn.disabled = false;
   nextBtn.style.cursor = 'pointer'
+  nextBtn.style.backgroundColor='green'
 
 }
 
@@ -175,10 +178,10 @@ document.getElementById("go-home").addEventListener("click", function () {
   resetQuiz()
   showQuestion()
 })
-document.getElementById("paly-again").addEventListener("click",function(){
-hide('score-page')
-hide("home-page")
-show('quiz-page')
-resetQuiz()
-showQuestion()
+document.getElementById("paly-again").addEventListener("click", function () {
+  hide('score-page')
+  hide("home-page")
+  show('quiz-page')
+  resetQuiz()
+  showQuestion()
 })
