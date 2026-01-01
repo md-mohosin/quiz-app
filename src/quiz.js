@@ -76,7 +76,12 @@ function showQuestion() {
   })
 
 }
-showQuestion()
+
+const nextBtn = document.getElementById("next-btn")
+nextBtn.disabled = true;
+if(nextBtn.disabled === true){
+  nextBtn.style.cursor='not-allowed'
+}
 
 
 
@@ -101,6 +106,9 @@ function checkAnswer(selectIndex, btn) {
     button.style.color = 'white'
   })
 
+  nextBtn.disabled=false;
+  nextBtn.style.cursor='pointer'
+
 }
 
 
@@ -113,6 +121,9 @@ document.getElementById("next-btn").addEventListener("click", function () {
   else {
     showScore()
   }
+  nextBtn.disabled=true
+  nextBtn.style.cursor='not-allowed'
+  showQuestion()
 })
 
 
@@ -142,3 +153,6 @@ document.getElementById("start-btn").addEventListener("click", function () {
   hide("home-page")
   show("quiz-page")
 })
+
+
+showQuestion()
