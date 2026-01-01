@@ -56,7 +56,12 @@ const questions = [
 let currentIndex = 0;
 let score = 0;
 
+const nextBtn = document.getElementById("next-btn")
 function showQuestion() {
+  nextBtn.disabled = true;
+  if (nextBtn.disabled === true) {
+    nextBtn.style.cursor = 'not-allowed'
+  }
   const currentQuestion = questions[currentIndex]
 
   document.getElementById("question").innerText = currentQuestion.question
@@ -77,11 +82,7 @@ function showQuestion() {
 
 }
 
-const nextBtn = document.getElementById("next-btn")
-nextBtn.disabled = true;
-if(nextBtn.disabled === true){
-  nextBtn.style.cursor='not-allowed'
-}
+
 
 
 
@@ -106,10 +107,25 @@ function checkAnswer(selectIndex, btn) {
     button.style.color = 'white'
   })
 
-  nextBtn.disabled=false;
-  nextBtn.style.cursor='pointer'
+  nextBtn.disabled = false;
+  nextBtn.style.cursor = 'pointer'
 
 }
+
+
+
+
+function resetQuiz() {
+  currentIndex = 0;
+  score = 0
+  nextBtn.disabled = true;
+  nextBtn.style.cursor = 'not-allowed'
+
+  document.getElementById("question").innerText = ''
+  document.getElementById("options").innerHTML = ''
+
+}
+
 
 
 
@@ -121,9 +137,6 @@ document.getElementById("next-btn").addEventListener("click", function () {
   else {
     showScore()
   }
-  nextBtn.disabled=true
-  nextBtn.style.cursor='not-allowed'
-  showQuestion()
 })
 
 
@@ -152,7 +165,20 @@ function show(id) {
 document.getElementById("start-btn").addEventListener("click", function () {
   hide("home-page")
   show("quiz-page")
+  showQuestion()
 })
+document.getElementById("go-home").addEventListener("click", function () {
+  hide("score-page")
+  hide("quiz-page")
+  show("home-page")
 
-
+  resetQuiz()
+  showQuestion()
+})
+document.getElementById("paly-again").addEventListener("click",function(){
+hide('score-page')
+hide("home-page")
+show('quiz-page')
+resetQuiz()
 showQuestion()
+})
