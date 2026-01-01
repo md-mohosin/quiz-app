@@ -76,6 +76,7 @@ function showQuestion() {
     const btn = document.createElement("button")
     btn.innerText = option
     btn.classList = 'btn'
+    btn.style.color='black'
 
     btn.onclick = () => checkAnswer(index, btn)
 

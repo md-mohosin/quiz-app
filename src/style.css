@@ -29,7 +29,7 @@
   border: none;
   border-radius: 20px;
   font-size: 18px;
-  cursor: pointer;
+  cursor: pointer;color: black;
 }
 
 .home {
@@ -70,6 +70,7 @@
 
 #question {
   font-size: 60px;
+  color: white;
 }
 
 .btn {
@@ -96,7 +97,6 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 40px;
-  color: white;
   margin-top: 100px;
 }
 
@@ -132,7 +132,7 @@
   width: 300px;
 }
 
-.score-count {
+.count-score {
   color: white;
   font-size: 60px;
 }
@@ -148,7 +148,8 @@
   padding: 15px 0;
   font-size: 15px;
   border-radius: 10px;
-  border: none
+  border: none;
+  background-color: #41E5ED;color: black;
 }
 
 
