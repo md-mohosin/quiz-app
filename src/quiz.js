@@ -159,10 +159,10 @@ function showScore() {
 
 
 function hide(id) {
-  document.getElementById(id).style.display = 'none'
+  document.getElementById(id).classList.add("hidden")
 }
 function show(id) {
-  document.getElementById(id).style.display = 'block'
+  document.getElementById(id).classList.remove("hidden")
 }
 
 
